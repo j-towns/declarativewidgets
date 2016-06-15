@@ -45,4 +45,5 @@ notifications:
 branches:
   only:
     - master
+    - DisableAutoSave
     - /^0\.6\.0\.dev[0-9]+$/
