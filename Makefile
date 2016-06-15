@@ -335,7 +335,7 @@ server: CMD?=jupyter notebook --no-browser --port 8888 --ip="*"
 server: INSTALL_DECLWID_CMD?=pip install $(PIP_OPTS) --no-binary ::all: $$(ls -1 /src/dist/*.tar.gz | tail -n 1) && jupyter declarativewidgets install --user && jupyter declarativewidgets installr --library=/opt/conda/lib/R/library && jupyter declarativewidgets activate;
 server: SERVER_NAME?=urth_widgets_server
 server: OPTIONS?=-it --rm
-server: VOL_MAP?=-v `pwd`/etc/notebooks:/home/jovyan/work
+server: VOL_MAP?=-v `pwd`/etc/notebooks:/home/jovyan/work -v `pwd`/etc/custom.js:/home/jovyan/.jupyter/custom/custom.js
 server: _run-$(PYTHON)
 
 server_4.2: CMD?=jupyter notebook --no-browser --port 8888 --ip="*"
