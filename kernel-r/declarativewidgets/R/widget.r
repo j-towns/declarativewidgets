@@ -110,6 +110,7 @@ initWidgets <- function() {
     }
     library(IRdisplay)
     library(IRkernel)
+    Sys.sleep(3)
     comm_manager <- get("comm_manager", envir = as.environment("package:IRkernel"))()
 
     # Support for ipywidgets 4.x client
@@ -117,6 +118,7 @@ initWidgets <- function() {
 
     # Support for ipywidgets 5.x client
     comm_manager$register_target("jupyter.widget", target_handler)
+    Sys.sleep(3)
 
     # JavaScript code to load the declarative widgets extension.
     # Code sent to the front end from here may be executed after
